@@ -41,6 +41,7 @@ while True:
             continue
 
         for face in results.multi_face_landmarks:
+            mpDraw.draw_landmarks(img, face, mpFaceMesh.FACEMESH_FACE_OVAL)
             # Tratamos de encontrar frames que nos sirvan para esta tarea
             l1x, l1y = int((face.landmark[61].x) * w), int((face.landmark[61].y) * h)
             l2x, l2y = int((face.landmark[291].x) * w), int((face.landmark[291].y) * h)

@@ -1,18 +1,20 @@
+# en este archivo estamos guardando el tablero de juego en una imagen
+
 import cv2
 
 video = cv2.VideoCapture('video.mp4')
 
-# Set the desired time frame in seconds
+# Señalo que quiero el frame que se encuentra en el segundo 10
 target_time = 10
 
-# Calculate the frame number for the desired time frame
+# calculo que frame se encuentra en ese segundo
 frame_rate = video.get(cv2.CAP_PROP_FPS)
 target_frame = int(target_time * frame_rate)
 
-# Set the video's current frame to the desired frame
+# pongo el video en el frame que calcule
 video.set(cv2.CAP_PROP_POS_FRAMES, target_frame)
 
-# Read and save the frame
+# guardo el frame en una imagen
 check, img = video.read()
 cv2.imwrite('frame_at_10s.jpg', img)
 
