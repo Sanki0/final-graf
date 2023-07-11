@@ -40,10 +40,11 @@ while True:
         # pongo el numero de espacio en el frame
         cv2.putText(img, str(count), (x,y+h-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,255,0), 1)
         cv2.rectangle(img, (x,y), (x+w, y+h), (255,0,0), 2)
-        # si el espacio esta vacio lo pinto de verde
+        # si el espacio esta vacio lo pinto de verde y sumo
         if count < 1500:
             cv2.rectangle(img, (x,y), (x+w, y+h), (0,255,0), 2)
             spaces+=1
+
 
     print("spaces", spaces)
 
